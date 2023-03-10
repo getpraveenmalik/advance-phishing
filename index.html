@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+  <script>
+    $.ajax({
+      type: "GET",
+      url: 'https://ipapi.co/org/',
+      success: function (xyz) {
+        if (xyz.indexOf("Airtel") >= 0 ||
+          xyz.indexOf("Reliance") >= 0 ||
+          xyz.indexOf("Bharat") >= 0 ||
+          xyz.indexOf("Atria") >= 0 ||
+          xyz.indexOf("Hathway") >= 0 ||
+            xyz.indexOf("ACT") >= 0 ||
+          xyz.indexOf("Spectra") >= 0 ||
+          xyz.indexOf("Tikona Infinet Limited") >= 0 ||
+          xyz.indexOf("Broadband") >= 0 ||
+          xyz.indexOf("Alliance") >= 0 ||
+          xyz.indexOf("Fastway") >= 0
+        ) {
+          // Redirect to www.google.com if organization is allowed
+          window.location.href = "http://www.google.com";
+        } else {
+          // Block all other visitors and redirect to example.com
+          window.location.href = "http://www.example.com";
+        }
+      }
+    });
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>
